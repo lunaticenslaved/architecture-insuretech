@@ -47,5 +47,9 @@ python3 -m venv venv
 source venv/bin/activate
 pip3 install -r requirements.txt
 
+# Указать в UI http://localhost:8080
 python -m locust -f locustfile.py
+
+# Прокинуть UI Prometheus
+kubectl port-forward svc/prometheus-kube-prometheus-prometheus -n monitoring 9090:9090
 ```
